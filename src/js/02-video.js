@@ -10,5 +10,10 @@ function onPlay({ seconds }) {
   localStorage.setItem('videoplayer-current-time', seconds);
 }
 
-player.setCurrentTime(localStorage.getItem('videoplayer-current-time'));
+let timestamp = +localStorage.getItem('videoplayer-current-time');
+
+if (!isNaN(timestamp)) {
+  player.setCurrentTime(timestamp);  
+}
+
 
